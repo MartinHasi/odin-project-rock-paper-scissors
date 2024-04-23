@@ -39,7 +39,10 @@
         }
         function playGame()
         {
-            let human = getComputerChoice();
+            // autoplay
+            // let human = getComputerChoice();
+            // Human vs Computer
+            let human = humanChoice();
             let computer = getComputerChoice();
             human = human.toLowerCase();
             computer = computer.toLowerCase();
@@ -90,12 +93,12 @@
 
         //console.log(getComputerChoice());
 
-        while(humanscore < 10)
+        while(humanscore < 5)
         {
             console.log(playGame());
             roundcounter++;
         }
-        console.log(`${roundcounter} rounds were played until computer or human won 10 times.`);
+        console.log(`${roundcounter} rounds were played until computer or human won 5 times.`);
     </script>
 </body>
 </html>
