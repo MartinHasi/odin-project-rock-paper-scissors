@@ -8,6 +8,8 @@
 <body>
     <script>
         const choice = ['Rock', 'Paper', 'Scissor'];
+        let humanscore = 0;
+        let computerscore = 0;
 
         function getComputerChoice()
         {
@@ -33,9 +35,28 @@
             }
 
         }
+        function playGame()
+        {
+            let human = humanChoice();
+            let computer = getComputerChoice();
+            
+            if(human === 'Rock' && computer ==='Rock')
+            {
+                return `No winner| Human: ${human} | Computer: ${computer}`;
+            }
+            else if(human === 'Rock' && computer === 'Scissor')
+            {
+                return `Human win| Human: ${human} | Computer: ${computer}`;
+            }
+            else if(human === 'Rock' && computer === 'Paper')
+            {
+                return `Computer win| Human: ${human} | Computer: ${computer}`;
+            }
+
+        }
         //console.log(getComputerChoice());
 
-        console.log(humanChoice());
+        console.log(playGame());
     </script>
 </body>
 </html>
