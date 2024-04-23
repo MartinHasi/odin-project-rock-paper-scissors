@@ -8,8 +8,10 @@
 <body>
     <script>
         const choice = ['Rock', 'Paper', 'Scissor'];
+        let humantot
         let humanscore = 0;
         let computerscore = 0;
+        let roundcounter = 0;
 
         function getComputerChoice()
         {
@@ -24,7 +26,7 @@
         {
             const userchoice = prompt('Input your Choice');
 
-            const result = choice.find((value) => value === userchoice);
+            const result = choice.find((value) => value.toLowerCase() === userchoice.toLowerCase());
             if(result)
             {
                 return result;
@@ -37,26 +39,63 @@
         }
         function playGame()
         {
-            let human = humanChoice();
+            let human = getComputerChoice();
             let computer = getComputerChoice();
-            
-            if(human === 'Rock' && computer ==='Rock')
-            {
-                return `No winner| Human: ${human} | Computer: ${computer}`;
-            }
-            else if(human === 'Rock' && computer === 'Scissor')
-            {
-                return `Human win| Human: ${human} | Computer: ${computer}`;
-            }
-            else if(human === 'Rock' && computer === 'Paper')
-            {
-                return `Computer win| Human: ${human} | Computer: ${computer}`;
-            }
+            human = human.toLowerCase();
+            computer = computer.toLowerCase();
 
+            if(human === 'rock' && computer ==='rock')
+            {
+                return `No winner | Human: ${human}  Score: ${humanscore} | Computer: ${computer} Score: ${computerscore}`;
+            }
+            else if(human === 'rock' && computer === 'scissor')
+            {
+                humanscore++;
+                return `Human win | Human: ${human}  Score: ${humanscore} | Computer: ${computer} Score: ${computerscore}`;
+            }
+            else if(human === 'rock' && computer === 'paper')
+            {
+                computerscore++;
+                return `Computer win | Human: ${human}  Score: ${humanscore} | Computer: ${computer} Score: ${computerscore}`;
+            }
+            else if(human === 'paper' && computer ==='paper')
+            {
+                return `No winner | Human: ${human}  Score: ${humanscore} | Computer: ${computer} Score: ${computerscore}`;
+            }
+            else if(human === 'paper' && computer === 'rock')
+            {
+                humanscore++;
+                return `Human win | Human: ${human}  Score: ${humanscore} | Computer: ${computer} Score: ${computerscore}`;
+            }
+            else if(human === 'paper' && computer === 'scissor')
+            {
+                computerscore++;
+                return `Computer win | Human: ${human}  Score: ${humanscore} | Computer: ${computer} Score: ${computerscore}`;
+            }
+            else if(human === 'scissor' && computer ==='scissor')
+            {
+                return `No winner | Human: ${human}  Score: ${humanscore} | Computer: ${computer} Score: ${computerscore}`;
+            }
+            else if(human === 'scissor' && computer === 'paper')
+            {
+                humanscore++;
+                return `Human win | Human: ${human}  Score: ${humanscore} | Computer: ${computer} Score: ${computerscore}`;
+            }
+            else if(human === 'scissor' && computer === 'rock')
+            {
+                computerscore++;
+                return `Computer win | Human: ${human}  Score: ${humanscore} | Computer: ${computer} Score: ${computerscore}`;
+            }
         }
+
         //console.log(getComputerChoice());
 
-        console.log(playGame());
+        while(humanscore < 10)
+        {
+            console.log(playGame());
+            roundcounter++;
+        }
+        console.log(`${roundcounter} rounds were played until computer or human won 10 times.`);
     </script>
 </body>
 </html>
