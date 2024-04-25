@@ -4,6 +4,19 @@ let humanscore = 0;
 let computerscore = 0;
 let roundcounter = 0;
 
+const playButton = document.querySelectorAll('button');
+
+playButton.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        //alert(clickedButton);
+        humanGuiChoice(button.id);
+    })
+    
+});
+
+
 function getComputerChoice()
 {
 
@@ -11,6 +24,11 @@ function getComputerChoice()
     const maxFloored = Math.floor(choice.length);
 
     return choice[Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled)];
+}
+
+function humanGuiChoice(buttonClick)
+{
+    alert(buttonClick);
 }
 
 function humanChoice()
@@ -31,9 +49,9 @@ function humanChoice()
 function playGame()
 {
     // autoplay
-    // let human = getComputerChoice();
+     let human = getComputerChoice();
     // Human vs Computer
-    let human = humanChoice();
+    //let human = humanChoice();
     let computer = getComputerChoice();
     human = human.toLowerCase();
     computer = computer.toLowerCase();
@@ -84,9 +102,11 @@ function playGame()
 
 //console.log(getComputerChoice());
 
+/*
 while(humanscore < 5)
 {
     console.log(playGame());
     roundcounter++;
 }
+*/
 console.log(`${roundcounter} rounds were played until computer or human won 5 times.`);

@@ -1,0 +1,30 @@
+*
+{
+    font-family: 'Courier New', Courier, monospace;
+    background-image: linear-gradient(to right, white, darkgrey, black );
+}
+h1
+{
+    text-align: center;
+}
+#container
+{
+    display: flex;
+}
+button
+{
+    min-width: fit-content;
+    width: 30%;
+    height: 300px;
+    background-image: linear-gradient(to left, coral, blue );
+    font-size: 56px;
+    color: antiquewhite;
+    border-radius: 50px;
+    border:5px groove coral;
+}
+#btn_id_2
+{
+    position: relative;
+
+    top: 100px;
+}
