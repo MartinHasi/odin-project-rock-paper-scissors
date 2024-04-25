@@ -11,9 +11,13 @@ playButton.forEach(button => {
     button.addEventListener('click', () => {
 
         //alert(clickedButton);
-        humanChoice(humanGuiChoice(button.id));
-        
-    })
+        ;
+        console.log(playGame(humanGuiChoice(button.id))); 
+
+        roundcounter++;
+        console.log(`${roundcounter} rounds were played until computer or human won 5 times.`);
+
+    });
     
 });
 
@@ -50,7 +54,7 @@ function humanChoice(choose)
 {
     //const userchoice = prompt('Rock, Paper, Scissor');
     const userchoice = choose;
-    alert(userchoice);
+    //alert(userchoice);
     const result = choice.find((value) => value.toLowerCase() === userchoice.toLowerCase());
     if(result)
     {
@@ -62,16 +66,17 @@ function humanChoice(choose)
     }
 
 }
-function playGame()
+function playGame(value)
 {
     // autoplay
-     let human = getComputerChoice();
+    // let human = getComputerChoice();
     // Human vs Computer
-    //let human = humanChoice();
+    let human = humanGuiChoice(value);
+    console.log(human);
     let computer = getComputerChoice();
     human = human.toLowerCase();
     computer = computer.toLowerCase();
-
+    console.log(human);
     if(human === 'rock' && computer ==='rock')
     {
         return `No winner | Human: ${human}  Score: ${humanscore} | Computer: ${computer} Score: ${computerscore}`;
@@ -121,8 +126,8 @@ function playGame()
 /*
 while(humanscore < 5)
 {
-    console.log(playGame());
-    roundcounter++;
+    console.log(playGame(humanGuiChoice(button.id)));
+roundcounter++;
 }
 */
 console.log(`${roundcounter} rounds were played until computer or human won 5 times.`);
