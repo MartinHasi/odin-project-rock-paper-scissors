@@ -11,7 +11,8 @@ playButton.forEach(button => {
     button.addEventListener('click', () => {
 
         //alert(clickedButton);
-        humanGuiChoice(button.id);
+        humanChoice(humanGuiChoice(button.id));
+        
     })
     
 });
@@ -28,13 +29,28 @@ function getComputerChoice()
 
 function humanGuiChoice(buttonClick)
 {
-    alert(buttonClick);
+    if(buttonClick === 'btn_id_1')
+    {
+        buttonClick = 'Rock';
+    }
+    else if(buttonClick === 'btn_id_2')
+    {
+        buttonClick = 'Paper';
+    }
+    else if(buttonClick === 'btn_id_3')
+    {
+        buttonClick = 'Scissor';
+    }
+    return buttonClick;
+    //alert(buttonClick);
+
 }
 
-function humanChoice()
+function humanChoice(choose)
 {
-    const userchoice = prompt('Rock, Paper, Scissor');
-
+    //const userchoice = prompt('Rock, Paper, Scissor');
+    const userchoice = choose;
+    alert(userchoice);
     const result = choice.find((value) => value.toLowerCase() === userchoice.toLowerCase());
     if(result)
     {
