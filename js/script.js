@@ -5,17 +5,19 @@ let computerscore = 0;
 let roundcounter = 0;
 
 const playButton = document.querySelectorAll('button');
-
+const headerTag = document.querySelector('h2');
+const pTag = document.querySelector('p');
 playButton.forEach(button => {
 
     button.addEventListener('click', () => {
 
         //alert(clickedButton);
         ;
-        console.log(playGame(humanGuiChoice(button.id))); 
+        //console.log(playGame(humanGuiChoice(button.id))); 
 
+        headerTag.textContent = playGame(humanGuiChoice(button.id));
         roundcounter++;
-        console.log(`${roundcounter} rounds were played until computer or human won 5 times.`);
+        pTag.textContent = `You played ${roundcounter} Round's Rock Paper Scissor!`;
 
     });
     
@@ -72,11 +74,11 @@ function playGame(value)
     // let human = getComputerChoice();
     // Human vs Computer
     let human = humanGuiChoice(value);
-    console.log(human);
+    //console.log(human);
     let computer = getComputerChoice();
     human = human.toLowerCase();
     computer = computer.toLowerCase();
-    console.log(human);
+    //console.log(human);
     if(human === 'rock' && computer ==='rock')
     {
         return `No winner | Human: ${human}  Score: ${humanscore} | Computer: ${computer} Score: ${computerscore}`;
@@ -130,4 +132,4 @@ while(humanscore < 5)
 roundcounter++;
 }
 */
-console.log(`${roundcounter} rounds were played until computer or human won 5 times.`);
+//console.log(`${roundcounter} rounds were played until computer or human won 5 times.`);

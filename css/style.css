@@ -1,15 +1,20 @@
 *
 {
     font-family: 'Courier New', Courier, monospace;
-    background-image: linear-gradient(to right, white, darkgrey, black );
+}
+body
+{
+    background-image: linear-gradient(to right, black,grey, white, grey, black );
+
 }
 h1
 {
     text-align: center;
 }
-#container
+.container
 {
     display: flex;
+    margin-top: 100px;
 }
 button
 {
@@ -21,10 +26,16 @@ button
     color: antiquewhite;
     border-radius: 50px;
     border:5px groove coral;
+    margin: 15px;
 }
 #btn_id_2
 {
     position: relative;
 
     top: 100px;
+}
+.info
+{
+    flex-direction: column;
+    align-items: center;
 }
